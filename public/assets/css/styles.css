@@ -1,0 +1,384 @@
+
+* {                         /* Reinicia márgenes y padding, y usa box-sizing para incluir bordes en el cálculo */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {                  /* Estilos generales del cuerpo de la página */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal */
+    line-height: 1.6;                                       /* Altura de línea para mejor legibilidad*/
+    color: #333;                                        /* Color del texto */
+    overflow-x: hidden;                                 /* Evita scroll horizontal */
+}
+
+.container {     /* Contenedor centralizado con ancho máximo */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {                        /* Contenedor centralizado con ancho máximo */
+    background: linear-gradient(135deg, #3f62fb 0%, #3339eb 100%);
+    color: white;
+    padding: 0.5rem 10;
+    position: fixed;             /* Fijo en la parte superior */
+    width: 100%;
+    top: 0;
+    z-index: 1000;               /* Se mantiene sobre otros elementos */
+    box-shadow: 0 2px 20px rgba(8, 49, 130, 0.1);
+}
+
+nav {                                        /* Barra de navegación flexible */
+    display: flex;
+    justify-content: space-between;         /* Espacia elementos a los lados */
+    align-items: center;                     /* Centra verticalmente */
+}
+
+.logo {          /* Estilos para el logo en texto */
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: 1px;
+}
+.logo img {           /* Tamaño del logo si es imagen */
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    width: 60px;
+}
+
+.nav-links {             /* Lista de enlaces del menú */
+    display: flex;
+    list-style: none;   /* Quita viñetas */
+    gap: 2rem;           /* Espaciado entre enlaces */
+}
+
+.nav-links a {                       /* Estilos de los enlaces del menú */
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;       /* Suaviza el hover */
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.nav-links a:hover {                    /* Efecto al pasar el mouse */
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.body-1 {                            /* Sección principal con imagen de fondo */
+    background-image: url('https://elinsular.cl/wp-content/uploads/2025/03/LEMUY-OK.jpg');
+    height: 100vh;
+    background-size: cover;         /* Ajusta imagen a cubrir todo */
+    display: flex;
+    align-items: center;             /* Centra verticalmente contenido */
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.contenido-body-1 h1 {                   /* Título principal en body-1 */
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;            /* Animación de aparición */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.contenido-body-1 img {       /* Imagen en body-1 */
+    height: 450px;
+    width: 450px;
+}
+
+
+.nosotros-button {        /* Botón destacado */
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;         /* Forma redondeada */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease 0.6s both;
+    box-shadow: 0 8px 25px rgba(255,107,107,0.3);
+}
+
+.nosotros-button:hover {        /* Efecto hover del botón */
+    background: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255,107,107,0.4);
+}
+
+section {       /* Espaciado vertical de secciones */
+    padding: 80px 0;
+}
+
+.titulo-seccion {            /* Títulos de sección */
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    position: relative;
+}
+
+.titulo-seccion-1::after {      /* Línea decorativa debajo del título */
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.body-2 {
+    background: #f8f9fa;         /* Fondo claro para sección */
+}
+
+.contenido-body-2 {      /* Distribución en dos columnas */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.texto-body-2 {          /* Texto dentro de body-2 */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.estadisticas-colegio{       /* Grilla de estadísticas */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.estadisticas{              /* Tarjetas de estadísticas */
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.estadisticas:hover {            /* Efecto hover en estadísticas */
+    transform: translateY(-10px);
+}
+
+.numeros-estadisticas {     
+    font-size: 3rem;    /* Números grandes de estadísticas */
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+
+.talleres {         /* Grilla de talleres */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.tarjeta-taller {            /* Tarjetas de cada taller */
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.body-4 {                /* Fondo con degradado para sección 4 */
+    background: linear-gradient(135deg, #f4e9e9 50%, #e8cfd3 100%);
+    color: white;
+}
+
+.noticia {       /* Grilla para noticias */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.item-noticia {              /* Tarjeta de noticia */
+    background: rgba(0, 0, 0, 0.526);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+}
+.item-noticia a{            /* Enlaces dentro de noticia */
+    text-decoration: none;
+    color: inherit;
+}
+.item-noticia a:hover{          /* Hover en enlaces de noticia */
+    text-decoration: underline;
+    color: white;
+}
+.item-noticia:hover {            /* Hover en tarjeta de noticia */
+    transform: translateY(-5px);
+}
+
+.fecha-noticia {                    /* Estilo para fecha de noticia */
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.body-5 {                        /* Sección de contacto/final */
+    background: #2c3e50;
+    color: white;
+}
+
+.contenido-contacto{             /* Distribución de contacto */
+    display: flex;
+    justify-content: space-between;
+}
+
+.informacion-contacto h3 {      /* Título en contacto */
+    margin-bottom: 1rem;
+    color: #ecf0f1;
+}
+.grupo-informacion {
+    display: flex;
+    justify-content: space-between;
+   width: 100%;
+}
+.grupo-izquierdo  {
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo-derecho {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-contacto-1, .item-contacto-2 {                /* Elementos de contacto */
+    margin-bottom: 1rem;
+}
+
+.item-contacto strong {              /* Etiqueta destacada en contacto */
+    margin-right: 0.5rem;
+    min-width: 100px;
+}
+
+.blog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.informacion-blog {
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.foto-blog {
+    width: 300px;    /* Ejemplo de ancho */
+  height: 300px;   /* Ejemplo de alto */
+  border-radius: 15px; /* Si quieres bordes redondeados */
+  overflow: hidden;    /* Para esconder lo que sobresalga */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra si es necesario */
+  position: relative;
+}
+
+.foto-blog img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la imagen ocupe todo el cuadro manteniendo proporción, recortando si es necesario */
+  display: block;    /* Quita espacios indeseados */
+  border-radius: 15px;
+}
+
+footer {                    /* Pie de página */
+    background: #1a252f;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+footer li a img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+footer li a:focus, a:active{     /* Quita contorno al hacer click/focus */
+   outline: none;
+}
+
+/* Media Queries para Tablet (768px en adelante) */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    
+    .nav-links {
+        position: static;
+        flex-direction: row;
+        background: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+    }
+    
+    .nav-links li {
+        margin-left: 1.5rem;
+    }
+    
+    .nav-links a {
+        padding: 0.5rem 0;
+    }
+    
+    .floating {
+        font-size: 2.5rem;
+    }
+    
+    .contenido-body-1 img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+    
+    .contenido-contacto {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .informacion-contacto {
+        flex: 1;
+    }
+}
+        
+        /* Media para Desktop (1024px en adelante) */
+@media (min-width: 1024px) {
+    .body-1 {
+       padding: 5rem 0;
+    }
+   
+   .floating {
+       font-size: 3rem;
+    }
+   
+   .contenido-body-1 img {
+       max-width: 1000px;
+    }
+   
+   .contenido-body-1 {
+       flex-direction: row;
+       justify-content: space-around;
+       text-align: center;
+    }
+   
+   .body-1-text {
+        max-width: 50%;
+    }
+}
